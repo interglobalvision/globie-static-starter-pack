@@ -22,7 +22,8 @@
     "gulp-util": "^3.0.4",
     "gulp-watch": "^4.2.4",
     "gulp-webserver": "^0.9.1",
-    "jshint-stylish": "^1.0.1"
+    "jshint-stylish": "^1.0.1",
+    "kouto-swiss": "^0.11.13"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -16,6 +16,7 @@ var gulp = require('gulp');
   stylus = require('gulp-stylus'),
   autoprefixer = require('gulp-autoprefixer'),
   minifycss = require('gulp-minify-css'),
+  swiss = require('kouto-swiss'),
 
   webserver = require('gulp-webserver'),
 
@@ -52,7 +53,11 @@ gulp.task('javascript-library', function() {
 gulp.task('style', function() {
   return gulp.src('css/site.styl')
   .pipe(plumber())
-  .pipe(stylus())
+  .pipe(stylus({
+      use: [
+        swiss()
+      ],
+    }))
   .on('error', errorNotify)
   .pipe(autoprefixer())
   .on('error', errorNotify)
