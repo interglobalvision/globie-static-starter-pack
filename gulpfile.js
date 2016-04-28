@@ -23,12 +23,12 @@ var gulp = require('gulp');
   imagemin = require('gulp-imagemin');
 
 function errorNotify(error){
-  notify.onError("Error: <%= error.message %>")
+  notify.onError("Error: <%= error.message %>");
   util.log(util.colors.red('Error'), error.message);
 }
 
 gulp.task('javascript', function() {
-  gulp.src('js/main.js')
+  return gulp.src('js/main.js')
   .pipe(sourcemaps.init())
   .pipe(jshint())
   .pipe(jshint.reporter('jshint-stylish'))
@@ -44,7 +44,7 @@ gulp.task('javascript', function() {
 });
 
 gulp.task('javascript-library', function() {
-  gulp.src('js/library/*.js')
+  return gulp.src('js/library/*.js')
   .pipe(concat('library.js'))
   .pipe(gulp.dest('js'))
   .pipe(notify({ message: 'Javascript Library task complete' }));
@@ -70,14 +70,14 @@ gulp.task('style', function() {
 });
 
 gulp.task('images', function () {
-    return gulp.src('src/images/*.*')
-    .pipe(cache('images'))
-    .pipe(imagemin({
-      progressive: false
-    }))
-    .on('error', errorNotify)
-    .pipe(gulp.dest('img/dist'))
-		.pipe(notify({ message: 'Images task complete' }));
+  return gulp.src('img/src/*.*')
+  .pipe(cache('images'))
+  .pipe(imagemin({
+    progressive: false
+  }))
+  .on('error', errorNotify)
+  .pipe(gulp.dest('img/dist'))
+	.pipe(notify({ message: 'Images task complete' }));
 });
 
 gulp.task('watch', function() {
