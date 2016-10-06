@@ -1,5 +1,6 @@
-single_page_boil
--------
+globie-static-starter-pack
+---
+v 1.0.0
 
 Starting point for single pages
 
@@ -10,8 +11,13 @@ rm -rf .git
 git init
 ```
 
-
-
 Tech this uses [thnx]:
 
 - http://gulpjs.com/
+
+---
+
+#### Setup
+
+- `npm install`
+- `gulp build` or `gulp`
