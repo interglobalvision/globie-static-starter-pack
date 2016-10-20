@@ -29,9 +29,11 @@ function errorNotify(error){
 
 gulp.task('javascript', function() {
   return gulp.src('js/main.js')
+  .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(jshint())
   .pipe(jshint.reporter('jshint-stylish'))
+  .on('error', errorNotify)
   .pipe(jscs('.jscsrc'))
   .on('error', errorNotify)
   .pipe(uglify())
