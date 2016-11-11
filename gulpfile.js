@@ -15,7 +15,7 @@ var gulp = require('gulp');
 
   stylus = require('gulp-stylus'),
   autoprefixer = require('gulp-autoprefixer'),
-  minifycss = require('gulp-minify-css'),
+  cleanCSS = require('gulp-clean-css'),
   swiss = require('kouto-swiss'),
 
   webserver = require('gulp-webserver'),
@@ -67,7 +67,7 @@ gulp.task('style', function() {
   .on('error', errorNotify)
   .pipe(gulp.dest('css'))
   .pipe(rename({suffix: '.min'}))
-  .pipe(minifycss())
+  .pipe(cleanCSS())
   .on('error', errorNotify)
   .pipe(gulp.dest('css'))
   .pipe(notify({ message: 'Style task complete' }));
