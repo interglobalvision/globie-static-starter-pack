@@ -19,5 +19,5 @@ Tech this uses [thnx]:
 
 #### Setup
 
-- `npm install`
-- `gulp build` or `gulp`
+- `yarn`
+- `webpack`
